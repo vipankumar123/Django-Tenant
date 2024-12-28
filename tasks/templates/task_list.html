@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ tenant.name }}'s Tasks</title>
+</head>
+<body>
+    <h1>Tasks for {{ tenant.name }}</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <strong>{{ task.title }}</strong>: {{ task.description }}
+                {% if task.completed %}
+                    [Completed]
+                {% else %}
+                    [Pending]
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
